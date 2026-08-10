@@ -130,6 +130,54 @@ The Dashboard is the overview tab where the most important information is surfac
 
 The Reports screen represents the operational and oversight side of the app. It is the place where data, issues, and summaries are reviewed, signaling that the platform is structured enough to monitor activity and maintain quality.
 
+#### Artist details report outline
+
+![Artist details report outline](Report_Artist_and_established_beatmaps_details.png)
+
+This report shows the artist-focused summary and established beatmap detail view first, making it easy to see the overall information structure before narrowing into filters or deeper results.
+
+#### Artist details report filters
+
+![Artist details report filters](Report_Artist_and_established_beatmaps_details.png)
+
+The filters for the artist details report let the user narrow the data by the relevant selection criteria, making the report more focused and easier to interpret.
+
+#### Top 10 scores report outline
+
+![Top 10 scores report outline](Report_Top_10_Most_Gained_scores_outline.png)
+
+The Top 10 Scores report outline highlights the ranking structure and the scoring view first, presenting the core information in a clear and immediately readable format.
+
+#### Top 10 scores report filters
+
+![Top 10 scores report filters](Report_Top_10_Most_Gained_scores_filters.png)
+
+The filters for the Top 10 Scores report refine the report by adjusting the scoring criteria, letting the user focus on the ranking view they want to inspect.
+
+#### Top 10 PP plays standard outline
+
+![Top 10 PP plays standard outline](Report_Top_10_highest_PP_plays_standard_outline.png)
+
+The Top 10 PP Plays Standard report outline presents the standard performance ranking view first, focusing on the most relevant results and how they are framed for comparison.
+
+#### Top 10 PP plays standard filters
+
+![Top 10 PP plays standard filters](Report_Top_10_highest_PP_plays_standard_Filters.png)
+
+The filters for the Standard PP report narrow the data by the relevant performance criteria so the ranking is easier to compare and interpret.
+
+#### Top 5 PP plays mania outline
+
+![Top 5 PP plays mania outline](Report_Top_10_highest_PP_plays_mania_outline.png)
+
+The Top 5 PP Plays Mania outline focuses on the mania-specific leaderboard structure, giving the user a clear view of how the highest-performing entries are framed and ranked.
+
+#### Top 5 PP plays mania filters
+
+![Top 5 PP plays mania filters](Report_Top_10_highest_PP_plays_mania_Filters.png)
+
+The filters for the Mania PP report refine the view by adjusting the relevant criteria, helping the user isolate the exact performance data they want to review.
+
 ### Chatter screen
 
 ![SFosu! chatter screen](Sfosu_Chatter_Screen.png)
