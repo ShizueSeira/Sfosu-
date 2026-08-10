@@ -40,17 +40,17 @@ The Global Chat screen opens the experience to a broader community. It communica
 
 The Artist screen focuses on the creative side of the app and presents the person or entity behind the music or content. It helps viewers connect the interface to the people creating the experiences they are interacting with.
 
-#### Artist details tab
-
-![SFosu! artist details tab](Sfosu_Artist_Details_Tab.png)
-
-When a specific artist record is selected, the Details tab shows the core profile information first. This view is meant to give a quick understanding of who the artist is and what information is most relevant at a glance.
-
 #### Artist related tab
 
 ![SFosu! artist related tab](Sfosu_Artist_Related_Tab.png)
 
 The Related tab expands the artist view by showing content connected to that artist. It helps users continue exploring the same artist through related music, entries, and associated material without leaving the record context.
+
+#### Artist details tab
+
+![SFosu! artist details tab](Sfosu_Artist_Details_Tab.png)
+
+When a specific artist record is selected, the Details tab shows the core profile information first. This view is meant to give a quick understanding of who the artist is and what information is most relevant at a glance.
 
 ### Beatmap screen
 
@@ -58,17 +58,17 @@ The Related tab expands the artist view by showing content connected to that art
 
 The Beatmap screen is where content detail becomes more specific and tangible. It introduces the actual playable or browsable content, giving users a first look at the maps, tracks, or music-based material that drives the experience.
 
-#### Beatmap details tab
-
-![SFosu! beatmap details tab](Sfosu_Beatmaps_Details_Tab.png)
-
-When a specific beatmap is opened, the Details tab gives the essential information for that map. This is the first place a user looks to understand the content, difficulty, and overall purpose of the record.
-
 #### Beatmap related tab
 
 ![SFosu! beatmap related tab](Sfosu_Beatmaps_Related_Tab.png)
 
 The Related tab keeps the exploration going by surfacing linked or similar beatmaps and associated content. It helps the user discover more relevant entries instead of stopping at the initial record.
+
+#### Beatmap details tab
+
+![SFosu! beatmap details tab](Sfosu_Beatmaps_Details_Tab.png)
+
+When a specific beatmap is opened, the Details tab gives the essential information for that map. This is the first place a user looks to understand the content, difficulty, and overall purpose of the record.
 
 ### Score submissions screen
 
@@ -88,11 +88,35 @@ The Details tab is the main view for score submissions and is the only tab in th
 
 The Accounts screen is where the user’s personal identity and profile context are made visible. This tab is important because it gives a sense of ownership, personal details, and the account-level structure that supports the rest of the app.
 
+#### Accounts related tab
+
+![SFosu! accounts related tab](Sfosu_Accounts_Related_Tab.png)
+
+The Related tab for Accounts expands the profile context by showing connected or associated content linked to that account. It helps the user continue exploring the account through related entries without losing the main identity context.
+
+#### Accounts details tab
+
+![SFosu! accounts details tab](Sfosu_Accounts_Details_Tab.png)
+
+The Details tab provides the key account information in a structured and readable way. It is the place where the app presents the most relevant personal or account-level information in a concise, focused view.
+
 ### Contacts screen
 
 ![SFosu! contacts screen](Sfosu_Contacts_Screen.png)
 
 The Contacts screen is designed around connection and relationships. It is the place where a user sees who they can reach, who is relevant, and how the app supports communication between people or groups.
+
+#### Contacts related tab
+
+![SFosu! contacts related tab](Sfosu_Contacts_Related_Tab.png)
+
+The Related tab for Contacts broadens the social context by surfacing connected people, groups, or relevant entries tied to that contact. It helps the user keep exploring relationships without leaving the contact view.
+
+#### Contacts details tab
+
+![SFosu! contacts details tab](Sfosu_Contacts_Details_Tab.png)
+
+The Details tab focuses on the essential information for a selected contact. It gives the clearest view of who that person is and what information is most relevant for communication or follow-up.
 
 ### Dashboard screen
 
@@ -117,6 +141,18 @@ The Chatter screen is the tab for direct social interaction in the app. It gives
 ![SFosu! chat messages screen](Sfosu_Chat_Messages_Screen.png)
 
 The Chat Messages screen is where the app feels more alive and immediate. This tab shows the value of ongoing communication, making the first impression one of responsiveness, conversation, and direct interaction.
+
+#### Chat messages related tab
+
+![SFosu! chat messages related tab](Sfosu_Chat_Message_Related_Tab.png)
+
+The Related tab for Chat Messages expands the conversation context by surfacing connected content and relevant follow-ups. It helps the user continue exploring the discussion beyond the immediate message.
+
+#### Chat messages details tab
+
+![SFosu! chat messages details tab](Sfosu_Chat_Message_Details_Tab.png)
+
+The Details tab focuses on the specific conversation content, making it the place where the user can inspect the full message context and the most important information tied to that exchange.
 
 ## Current status
 
