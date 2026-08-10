@@ -202,6 +202,34 @@ The Related tab for Chat Messages expands the conversation context by surfacing 
 
 The Details tab focuses on the specific conversation content, making it the place where the user can inspect the full message context and the most important information tied to that exchange.
 
+## How I built it from scratch
+
+These images show the early app-manager workflow I used to build the project from the ground up. They document the step-by-step structure I created when designing the app foundation before moving into the full interface and feature work.
+
+### App manager app overview
+
+![App Manager App](App_Manager_App.png)
+
+This is the starting point of the app manager, where the overall app structure and basic foundation were defined. It shows how the project began as a clean, organized system rather than a fully finished interface.
+
+### App manager navigation items
+
+![App Manager Navigation Items](App_Manager_Navigation_Items.png)
+
+This screen shows the navigation system that was set up early in the process. It highlights the app’s initial structure and how the main sections were planned to guide users through the experience.
+
+### App manager user profiles
+
+![App Manager User Profiles](App_Manager_User_Profiles.png)
+
+This part of the app manager focuses on user identity and profile setup. It captures how the app was organized around accounts, user information, and the personal context needed for the rest of the experience.
+
+### App manager app details and branding
+
+![App Manager App Details and Branding](App_Manager_App_Details_And_Branding.png)
+
+This screen covers the app details and branding layer, which is where the project starts to feel more complete. It reflects the step where the identity, branding, and key app metadata were defined alongside the functionality.
+
 ## Current status
 
 This project is currently in a learning and experimentation phase.
