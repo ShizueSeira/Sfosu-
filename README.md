@@ -40,17 +40,47 @@ The Global Chat screen opens the experience to a broader community. It communica
 
 The Artist screen focuses on the creative side of the app and presents the person or entity behind the music or content. It helps viewers connect the interface to the people creating the experiences they are interacting with.
 
+#### Artist details tab
+
+![SFosu! artist details tab](Sfosu_Artist_Details_Tab.png)
+
+When a specific artist record is selected, the Details tab shows the core profile information first. This view is meant to give a quick understanding of who the artist is and what information is most relevant at a glance.
+
+#### Artist related tab
+
+![SFosu! artist related tab](Sfosu_Artist_Related_Tab.png)
+
+The Related tab expands the artist view by showing content connected to that artist. It helps users continue exploring the same artist through related music, entries, and associated material without leaving the record context.
+
 ### Beatmap screen
 
 ![SFosu! beatmap screen](Sfosu_Beatmap_screen.png)
 
 The Beatmap screen is where content detail becomes more specific and tangible. It introduces the actual playable or browsable content, giving users a first look at the maps, tracks, or music-based material that drives the experience.
 
+#### Beatmap details tab
+
+![SFosu! beatmap details tab](Sfosu_Beatmaps_Details_Tab.png)
+
+When a specific beatmap is opened, the Details tab gives the essential information for that map. This is the first place a user looks to understand the content, difficulty, and overall purpose of the record.
+
+#### Beatmap related tab
+
+![SFosu! beatmap related tab](Sfosu_Beatmaps_Related_Tab.png)
+
+The Related tab keeps the exploration going by surfacing linked or similar beatmaps and associated content. It helps the user discover more relevant entries instead of stopping at the initial record.
+
 ### Score submissions screen
 
 ![SFosu! score submissions screen](Sfosu_Score_Submissions_Screen.png)
 
 The Score Submissions screen introduces the competitive or performance-tracking side of the app. It tells the viewer that results and achievements are tracked, reviewed, and presented as part of the overall experience.
+
+#### Score submissions details tab
+
+![SFosu! score submissions details tab](Sfosu_Score_Submissions_Details_Tab.png)
+
+The Details tab is the main view for score submissions and is the only tab in this area. It highlights the specific submission information, making it the most important place for reviewing results and understanding the relevant performance data.
 
 ### Accounts screen
 
