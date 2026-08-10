@@ -18,6 +18,76 @@ SFosu! is a personal app project meant to explore ideas, test concepts, and buil
 
 It may evolve over time, change direction, or go through several iterations. That is part of the process.
 
+## App overview
+
+These screens represent the first thing a viewer sees when opening each main tab in the app. They give a quick idea of the purpose and feel of the experience before diving deeper into the features.
+
+### Home screen
+
+![SFosu! home screen](Sfosu_Home_Screen.png)
+
+The Home screen is the landing view and the clearest introduction to the app. It presents the main entry point, helping users understand the app’s identity and giving them a quick sense of flow, focus, and navigation.
+
+### Dashboard screen
+
+![SFosu! dashboard screen](Sfosu_Dashboard_screen.png)
+
+The Dashboard is the overview tab where the most important information is surfaced first. It is designed to make a user feel oriented by showing a high-level summary of activity, progress, and key areas of the platform at a glance.
+
+### Accounts screen
+
+![SFosu! accounts screen](Sfosu_Accounts_Screen.png)
+
+The Accounts screen is where the user’s personal identity and profile context are made visible. This tab is important because it gives a sense of ownership, personal details, and the account-level structure that supports the rest of the app.
+
+### Artist screen
+
+![SFosu! artist screen](Sfosu_Artist_Screen.png)
+
+The Artist screen focuses on the creative side of the app and presents the person or entity behind the music or content. It helps viewers connect the interface to the people creating the experiences they are interacting with.
+
+### Beatmap screen
+
+![SFosu! beatmap screen](Sfosu_Beatmap_screen.png)
+
+The Beatmap screen is where content detail becomes more specific and tangible. It introduces the actual playable or browsable content, giving users a first look at the maps, tracks, or music-based material that drives the experience.
+
+### Chatter screen
+
+![SFosu! chatter screen](Sfosu_Chatter_Screen.png)
+
+The Chatter screen is the tab for direct social interaction in the app. It gives the first impression that the platform is not just content-based but also community-driven, encouraging conversation and personal connection.
+
+### Contacts screen
+
+![SFosu! contacts screen](Sfosu_Contacts_Screen.png)
+
+The Contacts screen is designed around connection and relationships. It is the place where a user sees who they can reach, who is relevant, and how the app supports communication between people or groups.
+
+### Chat messages screen
+
+![SFosu! chat messages screen](Sfosu_Chat_Messages_Screen.png)
+
+The Chat Messages screen is where the app feels more alive and immediate. This tab shows the value of ongoing communication, making the first impression one of responsiveness, conversation, and direct interaction.
+
+### Global chat screen
+
+![SFosu! global chat screen](Sfosu_Global_Chat_Screen.png)
+
+The Global Chat screen opens the experience to a broader community. It communicates that the app supports shared discussion and public interaction, making the environment feel active and connected beyond one-to-one communication.
+
+### Score submissions screen
+
+![SFosu! score submissions screen](Sfosu_Score_Submissions_Screen.png)
+
+The Score Submissions screen introduces the competitive or performance-tracking side of the app. It tells the viewer that results and achievements are tracked, reviewed, and presented as part of the overall experience.
+
+### Reports screen
+
+![SFosu! reports screen](Sfosu_Reports_Screen.png)
+
+The Reports screen represents the operational and oversight side of the app. It is the place where data, issues, and summaries are reviewed, signaling that the platform is structured enough to monitor activity and maintain quality.
+
 ## Current status
 
 This project is currently in a learning and experimentation phase.
