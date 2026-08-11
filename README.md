@@ -28,6 +28,10 @@ These screens represent the first thing a viewer sees when opening each main tab
 
 The Home screen is the landing view and the clearest introduction to the app. It presents the main entry point, helping users understand the app’s identity and giving them a quick sense of flow, focus, and navigation.
 
+The recent messages section on the home screen is intentionally limited to the 5 most recent messages so the page stays concise, readable, and focused without overwhelming the user with older chat activity.
+
+I also adjusted the visible fields across the object list views so that both the Recently Viewed and All Records tabs only show the most relevant columns for osu! users. The goal is to surface the details users actually need at a glance, without cluttering the screen with extra Salesforce-style fields that are not useful for this app. This reduces the number of clicks needed to understand a record and keeps each tab focused on the information that matters most.
+
 ### Global chat screen
 
 ![SFosu! global chat screen](Sfosu_Global_Chat_Screen.png)
@@ -218,11 +222,41 @@ This is the starting point of the app manager, where the overall app structure a
 
 This screen shows the navigation system that was set up early in the process. It highlights the app’s initial structure and how the main sections were planned to guide users through the experience.
 
+The sequence of tabs was intentionally designed to feel logical and progressive. The most important content-driven areas are placed earlier in the flow, with the app prioritizing the core user experience first: Home, then Global Chat, followed by Artist, Beatmaps, and Score-related sections. This keeps the app centered around browsing, exploring, and engaging with the music content before moving into more analytical or secondary views such as Reports and Dashboard.
+
+The idea is that the user should first understand the app’s purpose and explore the music ecosystem, then move into monitoring and higher-level summaries later. In other words, the ordering is meant to support a natural journey: discover content, interact, then review data and analytics.
+
+### Artist list view button layout
+
+![Artist list view button layout](Artist_List_View_Button_Layout.png)
+
+![Artist list view button layout settings](Artist_List_View_Button_Layout_settings.png)
+
+These screenshots show the list view action layout for Artist records. I intentionally kept the visible actions focused and minimal so that the user only sees the most relevant action for creating a new artist entry. The Add New Artist action is the priority. Delete, archive, or edit actions are not part of the current implementation and are better suited for future versions when the project has a clearer admin workflow and permission model.
+
+The main goal is to reduce clutter and make the list view feel cleaner and more purpose-built for the osu! user journey. That keeps the interaction simple while still leaving room for additional administrative actions when they are actually needed.
+
 ### App manager user profiles
 
 ![App Manager User Profiles](App_Manager_User_Profiles.png)
 
 This part of the app manager focuses on user identity and profile setup. It captures how the app was organized around accounts, user information, and the personal context needed for the rest of the experience.
+
+This is also where I started thinking about the different user types in the app. The System Administrator profile represents the app admin or platform owner, similar to osu! admins who need broad control over data, configuration, and system access. In contrast, the Sfosu!player profile represents a normal osu! player user, which is more restricted and should behave like a regular end-user profile instead of an admin-level one.
+
+One of the design ideas for the home screen is the osu! dashboard, which acts like a central overview page for the app. It can contain the four main reports that are also visible in the Reports section, giving users a quick summary of the overall platform without making them dive directly into the detailed reporting views. In a practical sense, the dashboard is the high-level summary page, while the Reports section is where the more detailed evidence and filters live.
+
+This also influenced how I think about the visualizations. Some charts are not automatically the best choice for every dataset. For example, for the "Most Gained Scores" view, a bar chart may be misleading if the difference between the top scorer and the next ranks is very large. In that case, a table-based ranking may be clearer and more honest because it makes the value gaps easier to inspect and compare without distorting the significance of the leaderboard.
+
+The main challenge here is setting the correct permissions, profile settings, and roles so the user can access the right objects and CRUD actions without giving them too much power. The normal player profile should be able to view and update only the records and fields that are relevant to their gameplay and personal profile, while admin users should have the full platform control needed to manage the app.
+
+I also ran into a frustrating issue while testing the standard osu player profile: the app would sometimes switch to the classic Salesforce experience and show a message like "insufficient privilege." That was a sign that the profile still lacked the required object or field access, or that a page/action was trying to load something the user was not allowed to see. This reminds me that profile setup is not just about making a user record exist — it also requires careful attention to the actual permissions behind the scenes.
+
+The Global Chat area also revealed another permission problem. The admin profile was able to send and test censored messages using a filter flow, where bad words such as "shit," "fuck," and "idiot" were replaced with "*Censored*". That flow worked in the admin context, but I struggled to get the standard player profile to see the admin’s messages or access the same chat behavior correctly. This suggests that the issue was not only with the message filter itself but also with the visibility settings, sharing rules, or page-level permissions for the standard player profile.
+
+At the moment, I am also unable to properly test role hierarchy permissions in the project, which means I still need to work out how to structure user roles and record-level visibility correctly. This is an important gap because role hierarchy affects how data is shared across users and can easily explain why a normal player cannot see the admin’s chat content when they should be able to.
+
+A random learning I picked up while testing this is that switching the display density from Comfy to Compact and vice versa can help refresh the UI experience on desktop, especially when the screen feels a bit delayed or sluggish. It is not a true fix for permission issues, but it is a practical way to force the page to update visually and give the interface a quick reset when it feels stuck or laggy.
 
 ### App manager app details and branding
 
@@ -253,21 +287,43 @@ I also explored a few interesting field/data-type patterns in these screenshots.
 
 The Artist custom object is one of the most important additions because it gives the app a dedicated place for creative identity data. This lets the project model the people or creators behind the content in a structured way, instead of treating them as simple strings or ad hoc labels.
 
+In this design, an Artist can be the creator or performer associated with a specific song or map, which makes sense for a domain where the artist is conceptually the owner of the music being represented.
+
+The Number of Beatmaps rollup on the Artist object is essentially a record count of all Beatmap records related to that artist. In other words, it is the number of beatmaps whose Artist field refers to that artist’s name or record. This is a simple summary field that helps show how much content belongs to that artist without needing to manually count related records each time.
+
 ### Beatmap custom object
 
 The Beatmap custom object adds the content layer of the project. It represents the actual playable or browsable map information and gives the system a dedicated place to store the details that matter for discovery, comparison, and performance tracking.
+
+This is also where the Artist relationship fits naturally. If each beatmap is tied to one primary artist, then a master-detail or lookup field on Beatmap pointing to Artist is a sensible design because the beatmap is the child record and the artist is the parent record. In other words, the beatmap belongs to that specific artist for the song represented by that map.
+
+This is a reasonable pattern when the song is clearly attributed to one artist. If a beatmap can legitimately include multiple artists, then a separate junction relationship or a different model would be better. But for the app’s initial structure, using Artist on the Beatmap object is a logical and practical choice.
+
+The Beatmap status field is a picklist and it makes sense to reflect the main osu! lifecycle states, such as Ranked, Qualified, Loved, and Graveyard. Those are the core statuses that capture the map’s current state in a clear and familiar way.
+
+The Key Count field is also a meaningful beatmap attribute. In the osu! mania context, this should represent the number of keys used by the map, typically from 1K up to 8K, while remaining blank for non-mania beatmaps. That matches the idea that mania maps are keyed differently from standard maps, so the count should only be relevant in that specific mode.
+
+This is likely the kind of field that should be constrained with validation and visibility rules. For example, the Key Count field should only be visible or editable when the beatmap is a mania map, and it should either be blank or prevented from being set for non-mania modes. That keeps the model clean and avoids meaningless values being stored on the wrong record type.
+
+The Play Time formula is a display formula for the beatmap duration. It takes the raw duration in seconds and formats it into a readable mm:ss value, where mm represents the number of minutes and ss represents the remaining seconds. This makes the data easier to read in the UI without exposing the raw numeric duration as the primary display value.
 
 ### Standard object: accounts
 
 ![Standard object account clans](Sfosu_Standard_Object_Account_Clans.png)
 
-The Accounts standard object is one of the core platform entities. This structure shows how account information is organized and how related account-level data is connected to the broader app model, giving the system a clear personal identity layer.
+I am using the Accounts standard object to represent osu! clans. In this model, the account is the group or organization layer, which fits the idea of a clan as a broader identity or container for related community members and group-level context.
+
+This setup is useful because it gives the app a natural place for clan-level information, while keeping the actual personal profile details separate from the group record.
 
 ### Standard object: contacts
 
 ![Standard object contact osu!PlayProfile](Sfosu_Standard_Object_Contact_osuPlayProfile.png)
 
-The Contacts standard object adds the social and relationship layer of the app. This model shows how contact identity and profile data are connected, making it easier to understand how users, people, and other externally relevant entities are represented in the interface.
+I am using the Contacts standard object to represent the osu! profile. This is the person-level layer: the profile information, personal details, and the identity that belongs to an individual user rather than a group or organization.
+
+This is a good fit for the app because the profile is conceptually closer to an individual record than a company-style account. It also reflects how I am thinking about the data model: keep the clan in Accounts, keep the profile in Contacts, and only include the fields that are actually useful for this app.
+
+A lot of the Salesforce standard columns may be present, but some of them are irrelevant for this project and may not be used initially. The goal is not to mirror every available Salesforce field exactly; it is to start with the relevant parts of the model and add more only when they are needed for the app’s actual functionality.
 
 ## Current status
 
