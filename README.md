@@ -92,6 +92,16 @@ The Related tab expands the artist view by showing content connected to that art
 
 When a specific artist record is selected, the Details tab shows the core profile information first. This view is meant to give a quick understanding of who the artist is and what information is most relevant at a glance.
 
+### Artist list view button layout
+
+![Artist list view button layout](Artist_List_View_Button_Layout.png)
+
+![Artist list view button layout settings](Artist_List_View_Button_Layout_settings.png)
+
+These screenshots show the list view action layout for Artist records. I intentionally kept the visible actions focused and minimal so that the user only sees the most relevant action for creating a new artist entry. The Add New Artist action is the priority. Delete, archive, or edit actions are not part of the current implementation and are better suited for future versions when the project has a clearer admin workflow and permission model.
+
+The main goal is to reduce clutter and make the list view feel cleaner and more purpose-built for the osu! user journey. That keeps the interaction simple while still leaving room for additional administrative actions when they are actually needed.
+
 ### Beatmap screen
 
 ![SFosu! beatmap screen](Sfosu_Beatmap_screen.png)
@@ -242,6 +252,81 @@ The Related tab for Chat Messages expands the conversation context by surfacing 
 
 The Details tab focuses on the specific conversation content, making it the place where the user can inspect the full message context and the most important information tied to that exchange.
 
+## Custom objects and standard object model
+
+These objects define the app’s data structure and show how the custom models fit alongside the built-in account and contact objects that support the user and relationship layers of the platform.
+
+### Custom objects overview
+
+![Custom objects overview](Sfosu_Custom_Objects.png)
+
+This view shows the custom object model used in the app. It gives a clear picture of the additional domain-specific entities created to support the app beyond the standard built-in objects, helping to explain how the system is structured around its own content and relationship logic.
+
+The object set now clearly includes the key custom records for the app’s content model:
+
+- Artist: a custom object for artist identity and related metadata
+- Beatmap: a custom object for beatmap content, details, and game-related record structure
+- Score Submission: a custom object tracking submitted play results and performance data
+- Chat Message: a custom object representing communication and conversation records
+
+I also explored a few interesting field/data-type patterns in these screenshots. The most useful ones for this app are the relationship-focused types, such as lookup/reference-style fields that connect records to their broader context, along with text and metadata fields for names, descriptions, and entity details. These are the kinds of fields that make the custom objects feel more like a real domain model instead of just isolated tables.
+
+### Artist custom object
+
+![Artist fields](Artist_Fields.png)
+
+The Artist custom object is one of the most important additions because it gives the app a dedicated place for creative identity data. This lets the project model the people or creators behind the content in a structured way, instead of treating them as simple strings or ad hoc labels.
+
+In this design, an Artist can be the creator or performer associated with a specific song or map, which makes sense for a domain where the artist is conceptually the owner of the music being represented.
+
+![Artist number of beatmaps rollup](Artist_Number_Of_Beatmaps_Rollup.png)
+
+The Number of Beatmaps rollup on the Artist object is essentially a record count of all Beatmap records related to that artist. In other words, it is the number of beatmaps whose Artist field refers to that artist’s name or record. This is a simple summary field that helps show how much content belongs to that artist without needing to manually count related records each time.
+
+### Beatmap custom object
+
+![Beatmap fields](Beatmap_Fields.png)
+
+The Beatmap custom object adds the content layer of the project. It represents the actual playable or browsable map information and gives the system a dedicated place to store the details that matter for discovery, comparison, and performance tracking.
+
+![Beatmap artist master-detail](Beatmap_Artist_Master_Detail.png)
+
+This is also where the Artist relationship fits naturally. If each beatmap is tied to one primary artist, then a master-detail or lookup field on Beatmap pointing to Artist is a sensible design because the beatmap is the child record and the artist is the parent record. In other words, the beatmap belongs to that specific artist for the song represented by that map.
+
+This is a reasonable pattern when the song is clearly attributed to one artist. If a beatmap can legitimately include multiple artists, then a separate junction relationship or a different model would be better. But for the app’s initial structure, using Artist on the Beatmap object is a logical and practical choice.
+
+![Beatmap status picklist](Beatmap_Status_Picklist.png)
+
+The Beatmap status field is a picklist and it makes sense to reflect the main osu! lifecycle states, such as Ranked, Qualified, Loved, and Graveyard. Those are the core statuses that capture the map’s current state in a clear and familiar way.
+
+![Beatmap key count picklist](Beatmap_Key_Count_Picklist.png)
+
+The Key Count field is also a meaningful beatmap attribute. In the osu! mania context, this should represent the number of keys used by the map, typically from 1K up to 8K, while remaining blank for non-mania beatmaps. That matches the idea that mania maps are keyed differently from standard maps, so the count should only be relevant in that specific mode.
+
+This is likely the kind of field that should be constrained with validation and visibility rules. For example, the Key Count field should only be visible or editable when the beatmap is a mania map, and it should either be blank or prevented from being set for non-mania modes. That keeps the model clean and avoids meaningless values being stored on the wrong record type.
+
+![Beatmap play time formula](Beatmap_Play_Time_Formula.png)
+
+The Play Time formula is a display formula for the beatmap duration. It takes the raw duration in seconds and formats it into a readable mm:ss value, where mm represents the number of minutes and ss represents the remaining seconds. This makes the data easier to read in the UI without exposing the raw numeric duration as the primary display value.
+
+### Standard object: accounts
+
+![Standard object account clans](Sfosu_Standard_Object_Account_Clans.png)
+
+I am using the Accounts standard object to represent osu! clans. In this model, the account is the group or organization layer, which fits the idea of a clan as a broader identity or container for related community members and group-level context.
+
+This setup is useful because it gives the app a natural place for clan-level information, while keeping the actual personal profile details separate from the group record.
+
+### Standard object: contacts
+
+![Standard object contact osu!PlayProfile](Sfosu_Standard_Object_Contact_osuPlayProfile.png)
+
+I am using the Contacts standard object to represent the osu! profile. This is the person-level layer: the profile information, personal details, and the identity that belongs to an individual user rather than a group or organization.
+
+This is a good fit for the app because the profile is conceptually closer to an individual record than a company-style account. It also reflects how I am thinking about the data model: keep the clan in Accounts, keep the profile in Contacts, and only include the fields that are actually useful for this app.
+
+A lot of the Salesforce standard columns may be present, but some of them are irrelevant for this project and may not be used initially. The goal is not to mirror every available Salesforce field exactly; it is to start with the relevant parts of the model and add more only when they are needed for the app’s actual functionality.
+
 ## Flows created
 
 I created four Salesforce flows in total for the SFosu! project.
@@ -296,16 +381,6 @@ This screen shows the navigation system that was set up early in the process. It
 The sequence of tabs was intentionally designed to feel logical and progressive. The most important content-driven areas are placed earlier in the flow, with the app prioritizing the core user experience first: Home, then Global Chat, followed by Artist, Beatmaps, and Score-related sections. This keeps the app centered around browsing, exploring, and engaging with the music content before moving into more analytical or secondary views such as Reports and Dashboard.
 
 The idea is that the user should first understand the app’s purpose and explore the music ecosystem, then move into monitoring and higher-level summaries later. In other words, the ordering is meant to support a natural journey: discover content, interact, then review data and analytics.
-
-### Artist list view button layout
-
-![Artist list view button layout](Artist_List_View_Button_Layout.png)
-
-![Artist list view button layout settings](Artist_List_View_Button_Layout_settings.png)
-
-These screenshots show the list view action layout for Artist records. I intentionally kept the visible actions focused and minimal so that the user only sees the most relevant action for creating a new artist entry. The Add New Artist action is the priority. Delete, archive, or edit actions are not part of the current implementation and are better suited for future versions when the project has a clearer admin workflow and permission model.
-
-The main goal is to reduce clutter and make the list view feel cleaner and more purpose-built for the osu! user journey. That keeps the interaction simple while still leaving room for additional administrative actions when they are actually needed.
 
 ### App manager user profiles
 
