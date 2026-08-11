@@ -23,6 +23,11 @@ It may evolve over time, change direction, or go through several iterations. Tha
 This project was built with the help of AI coding assistants. Here is my experience so far:
 
 - **GitHub Copilot (initial stages):** This was my first real experience using an AI model inside an editor. It felt more convenient than my traditional approach of using websites for AI help. The setup made it easy to work on the long README file and manage tons of screenshots directly in the environment.
+
+![GitHub Environment](Github_Environment.png)
+
+This screenshot shows the GitHub environment where I first started using Copilot. It was my initial setup before moving to the local VS Code environment with the Continue plugin.
+
 - **Credit limit hurdle:** On my second day using GitHub Copilot, I hit the 50% capacity notice, and it quickly reached 75%. This pushed me to look for alternatives.
 - **VS Code environment:** I switched to running VS Code locally so I could work on the repository directly instead of inside GitHub. I was able to clone and retrieve the source repo into my local VS Code setup.
 
