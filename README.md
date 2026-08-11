@@ -25,6 +25,23 @@ This project was built with the help of AI coding assistants. Here is my experie
 - **GitHub Copilot (initial stages):** This was my first real experience using an AI model inside an editor. It felt more convenient than my traditional approach of using websites for AI help. The setup made it easy to work on the long README file and manage tons of screenshots directly in the environment.
 - **Credit limit hurdle:** On my second day using GitHub Copilot, I hit the 50% capacity notice, and it quickly reached 75%. This pushed me to look for alternatives.
 - **VS Code environment:** I switched to running VS Code locally so I could work on the repository directly instead of inside GitHub. I was able to clone and retrieve the source repo into my local VS Code setup.
+
+![VS Code environment](VSCode_Environment.png)
+
+This screenshot shows my local VS Code environment where I set up the repository. Using the Continue plugin inside VS Code allowed me to work with AI models directly in the editor, which made managing the long README file and screenshots much more convenient.
+
+![Continue Open Router](Continue_Open_Router.png)
+
+This screenshot shows the Continue plugin configured with OpenRouter as the provider. OpenRouter gave me access to multiple models through a single API key, which was useful for switching between options when credit limits were hit.
+
+![Continue Open Router Website](Continue_Open_Router_Website.png)
+
+This screenshot shows the OpenRouter website where I managed my API keys and tracked usage. It helped me monitor which models were consuming credits and when limits were approaching.
+
+![Continue Poolside Laguna Use](Continue_Poolside_Laguna_Use.png)
+
+This screenshot shows the Continue plugin using the Poolside: Laguna S 2.1 (Free) model via OpenRouter. This is the model I am currently using and hoping things go well here.
+
 - **Gemini 3.x:** The free monthly credit limit was hit fast — within an hour.
 - **Gemini 2.x:** After just one change, it already reached the limit.
 - **Claude:** It immediately required a billing subscription. I could not use it at all without subscribing.
