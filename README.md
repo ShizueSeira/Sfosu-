@@ -442,6 +442,30 @@ This full flow diagram shows the end-to-end structure of the automation: a new c
 
 This screenshot shows the list of all automation flows created for the app. It confirms that the moderation flow is part of a broader set of process automations supporting the project.
 
+#### Test case: Flag Inappropriate Content
+
+I created a test case to verify the Chat Moderation Filter Flow works correctly. The test passed at the end, confirming the flow properly flags and censors inappropriate content.
+
+![Test Setup](Test_Flag_Inappropriate_Content_Chat_Moderation_Filter_Test_Setup.png)
+
+This screenshot shows the test setup configuration. It defines the test conditions and the initial data needed to trigger the moderation flow during the test run.
+
+![Initial Triggering Record](Test_Flag_Inappropriate_Content_Chat_Moderation_Filter_Test_Initial_Triggering_Record.png)
+
+This screenshot shows the initial triggering record used in the test. It contains the message with inappropriate content that should be caught by the moderation flow.
+
+![Test Details](Test_Flag_Inappropriate_Content_Chat_Moderation_Filter_Test_Details.png)
+
+This screenshot shows the test execution details. It displays the step-by-step progress of the test as the flow processes the triggering record and applies the moderation logic.
+
+![Test Assertions](Test_Flag_Inappropriate_Content_Chat_Moderation_Filter_Test_Assertions.png)
+
+This screenshot shows the test assertions. It verifies that the flow correctly identified the inappropriate content and applied the expected *Censored* replacement to the message.
+
+![Test Results](Test_Flag_Inappropriate_Content_Chat_Moderation_Filter_Test_Results.png)
+
+This screenshot shows the final test results. The test passed, confirming that the Chat Moderation Filter Flow correctly flags and censors inappropriate content as expected.
+
 ### 2. Get Notifications Developers Flow
 
 - Trigger: event-driven or record-created entry when notification settings are ready
