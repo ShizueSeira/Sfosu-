@@ -18,6 +18,19 @@ SFosu! is a personal app project meant to explore ideas, test concepts, and buil
 
 It may evolve over time, change direction, or go through several iterations. That is part of the process.
 
+## AI model experience
+
+This project was built with the help of AI coding assistants. Here is my experience so far:
+
+- **GitHub Copilot (initial stages):** This was my first real experience using an AI model inside an editor. It felt more convenient than my traditional approach of using websites for AI help. The setup made it easy to work on the long README file and manage tons of screenshots directly in the environment.
+- **Credit limit hurdle:** On my second day using GitHub Copilot, I hit the 50% capacity notice, and it quickly reached 75%. This pushed me to look for alternatives.
+- **VS Code environment:** I switched to running VS Code locally so I could work on the repository directly instead of inside GitHub. I was able to clone and retrieve the source repo into my local VS Code setup.
+- **Gemini 3.x:** The free monthly credit limit was hit fast — within an hour.
+- **Gemini 2.x:** After just one change, it already reached the limit.
+- **Claude:** It immediately required a billing subscription. I could not use it at all without subscribing.
+- **NVIDIA/Nemotron-3-Ultra (free):** It was extremely slow, so I switched models quickly.
+- **Current model:** I am now using **Poolside: Laguna S 2.1 (Free)** and hoping things go well here.
+
 ## Documentation
 
 The detailed notes for each topic are organized into separate files in the docs folder so this README stays as a concise project landing page.
