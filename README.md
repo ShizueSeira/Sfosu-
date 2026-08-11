@@ -395,6 +395,80 @@ LIMIT 5
 
 This version is slightly different because it is optimized for a recent-feed widget instead of the full chat history. It still reads from the same object, but it retrieves only the latest five records and sorts them in descending order so the newest posts appear first. This is useful when the app wants to highlight recent activity without loading the whole conversation thread.
 
+## Apex testing
+
+Apex tests are important because they verify that the server-side logic behaves correctly before the code is considered reliable. In this project, I used unit tests to validate the chat query methods and confirm that the returned data matches expectations.
+
+### ChatController Apex test
+
+The first test file is [classes/ChatControllerTest.cls](classes/ChatControllerTest.cls). It validates the main chat retrieval logic in [classes/ChatController.cls](classes/ChatController.cls).
+
+```apex
+@isTest
+private class ChatControllerTest {
+    @isTest
+    static void testGetRecentMessagesWithData() {
+        List<Chat_Message__c> testMessages = new List<Chat_Message__c>();
+        for (Integer i = 0; i < 5; i++) {
+            testMessages.add(new Chat_Message__c(
+                Message__c = 'Test Message ' + i
+            ));
+        }
+        insert testMessages;
+
+        Test.startTest();
+        List<Chat_Message__c> result = ChatController.getRecentMessages();
+        Test.stopTest();
+
+        System.assertNotEquals(null, result, 'Result list should not be null');
+        System.assertEquals(5, result.size(), 'Should return all 5 inserted test messages');
+        System.assertNotEquals(null, result[0].CreatedBy.Name, 'CreatedBy relation should be populated');
+    }
+}
+```
+
+This test covers the case where chat records already exist. It verifies that the method returns the records correctly, that the result is not null, and that the expected number of records appears in the response. It also checks that the `CreatedBy.Name` relationship is populated correctly.
+
+The second test in the same file checks the empty-state scenario:
+
+```apex
+@isTest
+static void testGetRecentMessagesEmpty() {
+    Test.startTest();
+    List<Chat_Message__c> result = ChatController.getRecentMessages();
+    Test.stopTest();
+
+    System.assertNotEquals(null, result, 'Result list should not be null');
+    System.assertEquals(0, result.size(), 'Should return an empty list when no records exist');
+}
+```
+
+This ensures the method behaves safely when no Chat Message records exist, returning an empty list instead of throwing an error or failing unexpectedly.
+
+### RecentChatFeedController Apex test
+
+The second test file is [classes/RecentChatFeedControllerTest.cls](classes/RecentChatFeedControllerTest.cls), and it validates the summary query in [classes/RecentChatFeedController.cls](classes/RecentChatFeedController.cls).
+
+```apex
+@isTest
+private class RecentChatFeedControllerTest {
+    @isTest
+    static void testGetRecentMessages() {
+        Chat_Message__c msg = new Chat_Message__c(Message__c = 'Test Message');
+        insert msg;
+
+        Test.startTest();
+        List<Chat_Message__c> results = RecentChatFeedController.getRecentMessages();
+        Test.stopTest();
+
+        System.assertEquals(1, results.size(), 'Should return 1 message');
+        System.assertEquals('Test Message', results[0].Message__c, 'Message text should match');
+    }
+}
+```
+
+This test confirms that the recent feed method returns the newest chat message and that the text matches the expected content. In other words, the test checks that the summary controller behaves correctly when retrieving a simple, recent message list.
+
 ## VS Code setup
 
 The project was developed and validated in VS Code with an authorized Salesforce org connection.
