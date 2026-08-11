@@ -593,7 +593,16 @@ This project is currently in a learning and experimentation phase.
 - Keep a record of progress and mistakes
 - Share the journey with others who are also learning
 
+## Top 3 Learning Priorities
+
+As I continue to develop SFosu!, I have identified three core areas where I want to focus my growth:
+
+1. **Permissions, Profiles, and Sharing Rules:** I need to master the Salesforce security model. Currently, the standard "Sfosu!player" profile is experienceing "insufficient privilege" errors and UI glitches that don't occur for the System Admin. I want to learn how to properly configure CRUD access and record-level security so the app works seamlessly for all user types.
+2. **Advanced LWC and Apex Development:** I want to push my technical limits with Lightning Web Components and Apex. This includes learning better debugging patterns for complex code, optimizing performance, and handling more sophisticated asynchronous operations.
+3. **Agentforce and AI Integration:** I want to explore how to include AI to make business processes more efficient. Learning how to leverage Agentforce will allow me to automate smarter interactions and bring modern AI capabilities into the SFosu! ecosystem.
+
 ## Development approach
+
 
 This project is a hands-on learning experience. I am focusing on:
 
