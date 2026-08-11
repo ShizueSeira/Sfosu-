@@ -45,6 +45,8 @@ The status picklist should cover the relevant osu! states such as Ranked, Qualif
 
 The Key Count field should be relevant for mania maps only. Values should normally run from 1K to 8K, while non-mania maps keep it blank. This should be controlled by visibility and validation rules.
 
+The Beatmap object also uses Record Type to separate gameplay modes. An osu!standard beatmap should use the standard layout and should not expose or require Key Count, while an osu!mania beatmap should use the mania layout and make Key Count available because it is part of the map definition for that mode. A validation rule should enforce this: Key Count is required for mania records and blank for standard records.
+
 ![Beatmap play time formula](../Beatmap_Play_Time_Formula.png)
 
 The Play Time formula formats the raw duration in seconds into a readable mm:ss display, where mm is minutes and ss is seconds.
