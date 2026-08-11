@@ -50,41 +50,6 @@ These are the main Salesforce files added for the chat feature and project setup
 
 These screens represent the first thing a viewer sees when opening each main tab in the app. They give a quick idea of the purpose and feel of the experience before diving deeper into the features.
 
-## VS Code setup
-
-The project was developed and validated in VS Code with an authorized Salesforce org connection.
-
-![VS Code environment](VSCode_Environment.png)
-
-![Authorized org in VS Code](VSCode_Authorized_Org.png)
-
-![Apex classes in VS Code](VSCode_Apex_Classes.png)
-
-![LWC files in VS Code](VSCode_LWC.png)
-
-## Flows created
-
-I created four Salesforce flows in total for the SFosu! project.
-
-### 1. Chat Moderation Filter Flow
-
-- Trigger: record created
-- Object: Chat_Message__c
-- Entry conditions: none
-- Flow type: Fast Field Update
-- Behavior: checks each new message for banned or inappropriate words
-- Result: if bad words are detected, the message is updated to *Censored*; clean messages remain unchanged
-
-![Chat Moderation Filter Configure Start](Flows_Chat_Moderation_Filter_Configure_Start.png)
-
-![Chat Moderation Filter Decision](Flows_Chat_Moderation_Filter_Decision.png)
-
-![Chat Moderation Filter Update Records](Flows_Chat_Moderation_Filter_Update_Records.png)
-
-![Chat Moderation Filter Flow Diagram](Flows_Chat_Moderation_Filter_FIgure.png)
-
-![Flow list](Flows_List.png)
-
 ### Home screen
 
 ![SFosu! home screen](Sfosu_Home_Screen.png)
@@ -258,6 +223,41 @@ The filters for the Mania PP report refine the view by adjusting the relevant cr
 ![SFosu! chatter screen](Sfosu_Chatter_Screen.png)
 
 The Chatter screen is the tab for direct social interaction in the app. It gives the first impression that the platform is not just content-based but also community-driven, encouraging conversation and personal connection.
+
+## Flows created
+
+I created four Salesforce flows in total for the SFosu! project.
+
+### 1. Chat Moderation Filter Flow
+
+- Trigger: record created
+- Object: Chat_Message__c
+- Entry conditions: none
+- Flow type: Fast Field Update
+- Behavior: checks each new message for banned or inappropriate words
+- Result: if bad words are detected, the message is updated to *Censored*; clean messages remain unchanged
+
+![Chat Moderation Filter Configure Start](Flows_Chat_Moderation_Filter_Configure_Start.png)
+
+![Chat Moderation Filter Decision](Flows_Chat_Moderation_Filter_Decision.png)
+
+![Chat Moderation Filter Update Records](Flows_Chat_Moderation_Filter_Update_Records.png)
+
+![Chat Moderation Filter Flow Diagram](Flows_Chat_Moderation_Filter_FIgure.png)
+
+![Flow list](Flows_List.png)
+
+## VS Code setup
+
+The project was developed and validated in VS Code with an authorized Salesforce org connection.
+
+![VS Code environment](VSCode_Environment.png)
+
+![Authorized org in VS Code](VSCode_Authorized_Org.png)
+
+![Apex classes in VS Code](VSCode_Apex_Classes.png)
+
+![LWC files in VS Code](VSCode_LWC.png)
 
 ### Chat messages screen
 
