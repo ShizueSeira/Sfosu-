@@ -454,13 +454,13 @@ This screenshot shows the test setup configuration. It defines the test conditio
 
 This screenshot shows the initial triggering record used in the test. It contains the message with inappropriate content that should be caught by the moderation flow.
 
-![Test Details](Test_Flag_Inappropriate_Content_Chat_Moderation_Filter_Test_Details.png)
-
-This screenshot shows the test execution details. It displays the step-by-step progress of the test as the flow processes the triggering record and applies the moderation logic.
-
 ![Test Assertions](Test_Flag_Inappropriate_Content_Chat_Moderation_Filter_Test_Assertions.png)
 
 This screenshot shows the test assertions. It verifies that the flow correctly identified the inappropriate content and applied the expected *Censored* replacement to the message.
+
+![Test Details](Test_Flag_Inappropriate_Content_Chat_Moderation_Filter_Test_Details.png)
+
+This screenshot shows the test execution details. It displays the step-by-step progress of the test as the flow processes the triggering record and applies the moderation logic.
 
 ![Test Results](Test_Flag_Inappropriate_Content_Chat_Moderation_Filter_Test_Results.png)
 
