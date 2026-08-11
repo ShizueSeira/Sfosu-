@@ -28,6 +28,24 @@ The detailed notes for each topic are organized into separate files in the docs 
 - [docs/dashboard.md](docs/dashboard.md) — dashboard, reports, and chart-vs-table decisions
 - [docs/ux.md](docs/ux.md) — navigation order, recent messages, list-view actions, and UX tweaks
 
+## Implemented code
+
+These are the main Salesforce files added for the chat feature and project setup.
+
+### Apex classes
+
+- [classes/ChatController.cls](classes/ChatController.cls) — retrieves recent chat messages and inserts new ones
+- [classes/RecentChatFeedController.cls](classes/RecentChatFeedController.cls) — returns the latest chat feed summary
+- [classes/ChatControllerTest.cls](classes/ChatControllerTest.cls) — test coverage for chat retrieval behavior
+- [classes/RecentChatFeedControllerTest.cls](classes/RecentChatFeedControllerTest.cls) — test coverage for recent feed behavior
+
+### Lightning Web Components
+
+- [lwc/publicChatRoom/publicChatRoom.js](lwc/publicChatRoom/publicChatRoom.js) — live chat room logic using EmpApi and Apex calls
+- [lwc/publicChatRoom/publicChatRoom.html](lwc/publicChatRoom/publicChatRoom.html) — public chat room UI
+- [lwc/chatFeed/chatFeed.js](lwc/chatFeed/chatFeed.js) — recent message feed wiring
+- [lwc/chatFeed/chatFeed.html](lwc/chatFeed/chatFeed.html) — recent message feed markup
+
 ## App overview
 
 These screens represent the first thing a viewer sees when opening each main tab in the app. They give a quick idea of the purpose and feel of the experience before diving deeper into the features.
