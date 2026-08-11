@@ -102,6 +102,50 @@ These screenshots show the list view action layout for Artist records. I intenti
 
 The main goal is to reduce clutter and make the list view feel cleaner and more purpose-built for the osu! user journey. That keeps the interaction simple while still leaving room for additional administrative actions when they are actually needed.
 
+### Add new record layouts
+
+These screenshots show the create-record layouts for the main domain objects. The goal was to keep each new record form focused on the fields that matter for that object, without exposing a cluttered Salesforce layout that would confuse the user experience.
+
+#### Add new artist record
+
+![Add new artist record](New_Artist_Record.png)
+
+The Artist creation screen keeps the record form streamlined around the identity data needed for a creator or performer. This makes it easy to add a new artist without dragging in irrelevant information.
+
+#### Add new clan record
+
+![Add new clan record](New_Clan_Record.png)
+
+The clan record follows the same pattern: it keeps the account-level context clear and focused, which fits the idea of representing an osu! clan or group as a dedicated account record.
+
+#### Add new contact record
+
+![Add new contact record](New_Contact_Record.png)
+
+The profile/contact form is built around the person-level identity and relevant osu! profile context, making it clear that this is the user-facing identity layer rather than the group-level account record.
+
+#### Add new score submission record
+
+![Add new score submission record](New_Score_Submission_Record.png)
+
+This submission form is focused on the actual performance entry. It keeps the input around the score-related details instead of mixing in unrelated artist or beatmap data.
+
+#### Beatmap record type and create layout
+
+![Beatmap record type selection](New_Beatmap_Record_Type.png)
+
+The Beatmap object has a Record Type field, and this is an important distinction in the app. The create flow is not a single one-size-fits-all layout: it changes depending on whether the beatmap is for osu!standard or osu!mania.
+
+![Beatmap standard record layout](New_Beatmap_osustd_Record_Type.png)
+
+For osu!standard beatmaps, the create page uses the standard layout and keeps the fields focused on the normal map metadata. This includes the usual beatmap details without the mania-only values.
+
+![Beatmap mania record layout](New_Beatmap_osumania_Record_Type.png)
+
+For osu!mania beatmaps, the layout is different because mania maps require additional fields that are not relevant to standard maps. In particular, the Key Count field is available here and should be set to the appropriate value, such as 1K to 8K, depending on the map.
+
+This distinction matters because the app is modeling different gameplay modes, and each mode has different field requirements. A standard beatmap should not carry mania-specific values, while a mania beatmap should not be created without the extra key information that makes the map meaningful in that mode.
+
 ### Beatmap screen
 
 ![SFosu! beatmap screen](Sfosu_Beatmap_screen.png)
@@ -299,11 +343,15 @@ This is a reasonable pattern when the song is clearly attributed to one artist. 
 
 The Beatmap status field is a picklist and it makes sense to reflect the main osu! lifecycle states, such as Ranked, Qualified, Loved, and Graveyard. Those are the core statuses that capture the map’s current state in a clear and familiar way.
 
+The Beatmap object also uses Record Type to differentiate between gameplay modes. This matters because the new-record layout for an osu!standard beatmap is different from the layout used for an osu!mania beatmap. Standard records keep the normal beatmap metadata fields, while mania records include the extra mode-specific configuration that applies only to mania maps.
+
 ![Beatmap key count picklist](Beatmap_Key_Count_Picklist.png)
 
 The Key Count field is also a meaningful beatmap attribute. In the osu! mania context, this should represent the number of keys used by the map, typically from 1K up to 8K, while remaining blank for non-mania beatmaps. That matches the idea that mania maps are keyed differently from standard maps, so the count should only be relevant in that specific mode.
 
 This is likely the kind of field that should be constrained with validation and visibility rules. For example, the Key Count field should only be visible or editable when the beatmap is a mania map, and it should either be blank or prevented from being set for non-mania modes. That keeps the model clean and avoids meaningless values being stored on the wrong record type.
+
+The available fields during beatmap creation therefore need to reflect that difference. The osu!standard layout should not include Key Count, while the osu!mania layout should expose it as an available field because the key count is central to defining how the map is played in that mode.
 
 ![Beatmap play time formula](Beatmap_Play_Time_Formula.png)
 
