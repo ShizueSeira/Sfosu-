@@ -407,6 +407,35 @@ This full flow diagram shows the end-to-end structure of the automation: a new c
 
 This screenshot shows the list of all automation flows created for the app. It confirms that the moderation flow is part of a broader set of process automations supporting the project.
 
+### 2. Get Notifications Developers Flow
+
+- Trigger: event-driven or record-created entry when notification settings are ready
+- Object: Notification or related custom object for chat alerts
+- Entry conditions: configured to run once the notification type and recipient are available
+- Flow type: record-triggered or scheduled flow for sending alerts
+- Behavior: loads the notification type, assigns the recipient, and sends chat bell alert notifications
+- Result: the relevant user receives a bell alert notification, rather than a generic developer mention
+
+![Get Notifications Developers Configure Start](Flows_Get_Notifications_Developers_Configure_Start.png)
+
+This start screen displays the flow configuration for the notification automation. It confirms that the flow is set up to begin automatically when the notification source triggers it.
+
+![Get Notifications Developers Get Records](Flows_Get_Notifications_Developers_Get_Records.png)
+
+This step retrieves the notification type record needed to determine the correct alert behavior. It ensures the flow has the right notification template or settings before proceeding.
+
+![Get Notifications Developers Assignment](Flows_Get_Notifications_Developers_Assignment.png)
+
+This assignment step selects the recipient for the notification. It is the key part of the flow that ensures the alert goes to the appropriate user rather than a broad developer group.
+
+![Get Notifications Developers Action One](Flows_Get_Notifications_Developers_Action_One.png)
+
+This action sends the first chat bell alert notification once the recipient and notification type are ready.
+
+![Get Notifications Developers Action Two](Flows_Get_Notifications_Developers_Action_Two.png)
+
+This action completes the notification flow by sending the second chat bell alert, demonstrating the final delivery step of the alert automation.
+
 ## SOQL used in the chat message logic
 
 Salesforce Object Query Language (SOQL) is the query language I used to pull chat records from the Chat Message object in Apex. In the chat controller, the app needs to retrieve recent conversation history so the LWC can display the message feed and keep the UI updated.
