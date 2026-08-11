@@ -364,7 +364,7 @@ This screenshot shows the list of all automation flows created for the app. It c
 
 Salesforce Object Query Language (SOQL) is the query language I used to pull chat records from the Chat Message object in Apex. In the chat controller, the app needs to retrieve recent conversation history so the LWC can display the message feed and keep the UI updated.
 
-The main query used in the chat message Apex logic is:
+The main query used in the chat message Apex logic is from the original source file [classes/ChatController.cls](classes/ChatController.cls):
 
 ```apex
 SELECT Id, Message__c, Sender_Name__c, CreatedDate
@@ -384,7 +384,7 @@ This is useful because the chat room does not need to load every message ever se
 
 ### Recent chat feed SOQL example
 
-The second query is used for the smaller summary panel that shows the newest chat activity at a glance:
+The second query is used for the smaller summary panel that shows the newest chat activity at a glance, and it is implemented in [classes/RecentChatFeedController.cls](classes/RecentChatFeedController.cls):
 
 ```apex
 SELECT Id, CreatedBy.Name, Message__c, CreatedDate
