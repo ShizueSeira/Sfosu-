@@ -382,6 +382,19 @@ This query does a few important things:
 
 This is useful because the chat room does not need to load every message ever sent; it only needs the most recent conversation history in a lightweight and readable format. I also used a similar pattern in the recent feed controller, but with a descending order and a smaller limit to show the newest messages in a compact summary view.
 
+### Recent chat feed SOQL example
+
+The second query is used for the smaller summary panel that shows the newest chat activity at a glance:
+
+```apex
+SELECT Id, CreatedBy.Name, Message__c, CreatedDate
+FROM Chat_Message__c
+ORDER BY CreatedDate DESC
+LIMIT 5
+```
+
+This version is slightly different because it is optimized for a recent-feed widget instead of the full chat history. It still reads from the same object, but it retrieves only the latest five records and sorts them in descending order so the newest posts appear first. This is useful when the app wants to highlight recent activity without loading the whole conversation thread.
+
 ## VS Code setup
 
 The project was developed and validated in VS Code with an authorized Salesforce org connection.
