@@ -6,14 +6,14 @@ The home page is intended to act as a summary dashboard for the app. It should s
 
 ## Report structure
 
-The project includes several reports that are also reflected in the dashboard:
+The project includes four main reports that are also reflected in the dashboard:
 
 - Artist details report
 - Top 10 most gained scores
-- Top 10 PP plays standard
+- Top 5 PP plays standard
 - Top 5 PP plays mania
 
-These reports are meant to give both a summary and a detailed view of the data.
+These reports are meant to give both a summary and a detailed view of the data. They capture the key performance and content-overview areas the app cares about most without overwhelming the user with too many ranking views.
 
 ## Chart vs table decision
 
