@@ -31,6 +31,28 @@ On the bad-word path, an Update Records element changes the message text to *Cen
 
 ![Flow overview](../Flows_Chat_Moderation_Filter_FIgure.png)
 
+### Flow 2: Get Notifications Developers
+
+This flow handles sending chat-style bell notifications after a trigger event is configured. The sequence includes:
+
+- Configure Start settings for the notification flow
+- Get the notification type record(s)
+- Add or assign the recipient
+- Send the first chat bell alert
+- Send the second chat bell alert
+
+![Configure Start settings](../Flows_Get_Notifications_Developers_Configure_Start.png)
+
+![Get notification type](../Flows_Get_Notifications_Developers_Get_Records.png)
+
+![Add recipient assignment](../Flows_Get_Notifications_Developers_Assignment.png)
+
+![Send chat bell alert action one](../Flows_Get_Notifications_Developers_Action_One.png)
+
+![Send chat bell alert action two](../Flows_Get_Notifications_Developers_Action_Two.png)
+
+I also learned that it is better practice not to use a generic developer mention in this notification flow. Instead, a user-specific mention such as `@[their user]` would be more fitting for the recipient context and avoids hard-coded or overly broad developer mentions.
+
 ### Full flow list
 
 1. Chat Moderation Filter Flow
