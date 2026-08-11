@@ -46,6 +46,10 @@ These are the main Salesforce files added for the chat feature and project setup
 - [lwc/chatFeed/chatFeed.js](lwc/chatFeed/chatFeed.js) — recent message feed wiring
 - [lwc/chatFeed/chatFeed.html](lwc/chatFeed/chatFeed.html) — recent message feed markup
 
+## App overview
+
+These screens represent the first thing a viewer sees when opening each main tab in the app. They give a quick idea of the purpose and feel of the experience before diving deeper into the features.
+
 ## VS Code setup
 
 The project was developed and validated in VS Code with an authorized Salesforce org connection.
@@ -80,10 +84,6 @@ I created four Salesforce flows in total for the SFosu! project.
 ![Chat Moderation Filter Flow Diagram](Flows_Chat_Moderation_Filter_FIgure.png)
 
 ![Flow list](Flows_List.png)
-
-## App overview
-
-These screens represent the first thing a viewer sees when opening each main tab in the app. They give a quick idea of the purpose and feel of the experience before diving deeper into the features.
 
 ### Home screen
 
