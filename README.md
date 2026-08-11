@@ -436,6 +436,20 @@ This action sends the first chat bell alert notification once the recipient and 
 
 This action completes the notification flow by sending the second chat bell alert, demonstrating the final delivery step of the alert automation.
 
+### 3. Beatmap - Qualify Map Flow
+
+- Trigger: screen flow launched from a button/action on a specific Beatmap record
+- Object: Beatmap__c
+- Entry conditions: none (launched manually via action/button)
+- Flow type: Screen Flow
+- Behavior: updates the Beatmap record's Status field to "Qualified" (e.g., Ranked → Qualified)
+- Result: the beatmap status changes to Qualified when the action is invoked
+- Current state: was working previously but is now broken; root cause not yet identified
+
+![Beatmap Qualify Map Update Records](Flows_Beatmap_Qualify_Map_Update_records.png)
+
+This screenshot shows the Update Records element that sets the Beatmap status to Qualified. The flow is designed to be triggered from a button on the Beatmap record page, making it easy for users to qualify a map directly from the record.
+
 ## SOQL used in the chat message logic
 
 Salesforce Object Query Language (SOQL) is the query language I used to pull chat records from the Chat Message object in Apex. In the chat controller, the app needs to retrieve recent conversation history so the LWC can display the message feed and keep the UI updated.
