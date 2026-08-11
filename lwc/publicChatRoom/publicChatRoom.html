@@ -1,0 +1,30 @@
+<template>
+    <lightning-card title="SFosu! Public Global Chat" icon-name="standard:rtc_presence">
+        <div class="chat-container slds-p-around_medium">
+            <!-- Message Feed -->
+            <div class="message-feed slds-scrollable_y" style="max-height: 300px;">
+                <template for:each={messages} for:item="msg">
+                    <div key={msg.Id} class="slds-m-bottom_small">
+                        <strong>{msg.Sender_Name__c}</strong>: <span>{msg.Message__c}</span>
+                    </div>
+                </template>
+            </div>
+
+            <!-- Input Area -->
+            <div class="slds-grid slds-m-top_small">
+                <div class="slds-col slds-grow">
+                    <lightning-input 
+                        type="text" 
+                        value={newMessageText} 
+                        placeholder="Type a message..." 
+                        onchange={handleInputChange}
+                        onkeyup={handleKeyUp}>
+                    </lightning-input>
+                </div>
+                <div class="slds-col slds-no-flex slds-m-left_x-small slds-align-bottom">
+                    <lightning-button label="Send" variant="brand" onclick={handleSend}></lightning-button>
+                </div>
+            </div>
+        </div>
+    </lightning-card>
+</template>

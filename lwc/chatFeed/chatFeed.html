@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Recent Messages">
+        <div class="slds-var-p-around_medium">
+            <template if:true={messages.data}>
+                <template for:each={messages.data} for:item="msg">
+                    <div key={msg.Id} class="slds-box slds-var-m-bottom_small">
+                        <p>
+                            <strong>{msg.CreatedBy.Name}</strong> 
+                            <span class="slds-text-color_weak"> ({msg.CreatedDate})</span>
+                        </p>
+                        <p>{msg.Message__c}</p>
+                    </div>
+                </template>
+            </template>
+            
+            <template if:true={messages.error}>
+                <p class="slds-text-color_error">Error loading messages.</p>
+            </template>
+        </div>
+    </lightning-card>
+</template>
