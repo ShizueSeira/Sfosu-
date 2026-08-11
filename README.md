@@ -102,49 +102,11 @@ These screenshots show the list view action layout for Artist records. I intenti
 
 The main goal is to reduce clutter and make the list view feel cleaner and more purpose-built for the osu! user journey. That keeps the interaction simple while still leaving room for additional administrative actions when they are actually needed.
 
-### Add new record layouts
-
-These screenshots show the create-record layouts for the main domain objects. The goal was to keep each new record form focused on the fields that matter for that object, without exposing a cluttered Salesforce layout that would confuse the user experience.
-
 #### Add new artist record
 
 ![Add new artist record](New_Artist_Record.png)
 
 The Artist creation screen keeps the record form streamlined around the identity data needed for a creator or performer. This makes it easy to add a new artist without dragging in irrelevant information.
-
-#### Add new clan record
-
-![Add new clan record](New_Clan_Record.png)
-
-The clan record follows the same pattern: it keeps the account-level context clear and focused, which fits the idea of representing an osu! clan or group as a dedicated account record.
-
-#### Add new contact record
-
-![Add new contact record](New_Contact_Record.png)
-
-The profile/contact form is built around the person-level identity and relevant osu! profile context, making it clear that this is the user-facing identity layer rather than the group-level account record.
-
-#### Add new score submission record
-
-![Add new score submission record](New_Score_Submission_Record.png)
-
-This submission form is focused on the actual performance entry. It keeps the input around the score-related details instead of mixing in unrelated artist or beatmap data.
-
-#### Beatmap record type and create layout
-
-![Beatmap record type selection](New_Beatmap_Record_Type.png)
-
-The Beatmap object has a Record Type field, and this is an important distinction in the app. The create flow is not a single one-size-fits-all layout: it changes depending on whether the beatmap is for osu!standard or osu!mania.
-
-![Beatmap standard record layout](New_Beatmap_osustd_Record_Type.png)
-
-For osu!standard beatmaps, the create page uses the standard layout and keeps the fields focused on the normal map metadata. This includes the usual beatmap details without the mania-only values.
-
-![Beatmap mania record layout](New_Beatmap_osumania_Record_Type.png)
-
-For osu!mania beatmaps, the layout is different because mania maps require additional fields that are not relevant to standard maps. In particular, the Key Count field is available here and should be set to the appropriate value, such as 1K to 8K, depending on the map.
-
-This distinction matters because the app is modeling different gameplay modes, and each mode has different field requirements. A standard beatmap should not carry mania-specific values, while a mania beatmap should not be created without the extra key information that makes the map meaningful in that mode.
 
 ### Beatmap screen
 
@@ -164,11 +126,33 @@ The Related tab keeps the exploration going by surfacing linked or similar beatm
 
 When a specific beatmap is opened, the Details tab gives the essential information for that map. This is the first place a user looks to understand the content, difficulty, and overall purpose of the record.
 
+#### Beatmap record type and create layout
+
+![Beatmap record type selection](New_Beatmap_Record_Type.png)
+
+The Beatmap object has a Record Type field, and this is an important distinction in the app. The create flow is not a single one-size-fits-all layout: it changes depending on whether the beatmap is for osu!standard or osu!mania.
+
+![Beatmap standard record layout](New_Beatmap_osustd_Record_Type.png)
+
+For osu!standard beatmaps, the create page uses the standard layout and keeps the fields focused on the normal map metadata. This includes the usual beatmap details without the mania-only values.
+
+![Beatmap mania record layout](New_Beatmap_osumania_Record_Type.png)
+
+For osu!mania beatmaps, the layout is different because mania maps require additional fields that are not relevant to standard maps. In particular, the Key Count field is available here and should be set to the appropriate value, such as 1K to 8K, depending on the map.
+
+This distinction matters because the app is modeling different gameplay modes, and each mode has different field requirements. A standard beatmap should not carry mania-specific values, while a mania beatmap should not be created without the extra key information that makes the map meaningful in that mode.
+
 ### Score submissions screen
 
 ![SFosu! score submissions screen](Sfosu_Score_Submissions_Screen.png)
 
 The Score Submissions screen introduces the competitive or performance-tracking side of the app. It tells the viewer that results and achievements are tracked, reviewed, and presented as part of the overall experience.
+
+#### Add new score submission record
+
+![Add new score submission record](New_Score_Submission_Record.png)
+
+This submission form is focused on the actual performance entry. It keeps the input around the score-related details instead of mixing in unrelated artist or beatmap data.
 
 #### Score submissions details tab
 
@@ -194,6 +178,12 @@ The Related tab for Accounts expands the profile context by showing connected or
 
 The Details tab provides the key account information in a structured and readable way. It is the place where the app presents the most relevant personal or account-level information in a concise, focused view.
 
+#### Add new clan record
+
+![Add new clan record](New_Clan_Record.png)
+
+The clan record follows the same pattern: it keeps the account-level context clear and focused, which fits the idea of representing an osu! clan or group as a dedicated account record.
+
 ### Contacts screen
 
 ![SFosu! contacts screen](Sfosu_Contacts_Screen.png)
@@ -211,6 +201,12 @@ The Related tab for Contacts broadens the social context by surfacing connected 
 ![SFosu! contacts details tab](Sfosu_Contacts_Details_Tab.png)
 
 The Details tab focuses on the essential information for a selected contact. It gives the clearest view of who that person is and what information is most relevant for communication or follow-up.
+
+#### Add new contact record / osu! profile
+
+![Add new contact record](New_Contact_Record.png)
+
+The profile/contact form is built around the person-level identity and relevant osu! profile context, making it clear that this is the user-facing identity layer rather than the group-level account record.
 
 ### Dashboard screen
 
