@@ -466,30 +466,6 @@ This screenshot shows the test execution details. It displays the step-by-step p
 
 This screenshot shows the final test results. The test passed, confirming that the Chat Moderation Filter Flow correctly flags and censors inappropriate content as expected.
 
-#### Test case: Chat Bell Notification
-
-I created a test case to verify the Get Notifications Developers Flow works correctly. The test confirms that chat bell notifications are sent to the appropriate recipient.
-
-![Test Setup](Test_Chat_Bell_Notification_Test_Setup.png)
-
-This screenshot shows the test setup configuration. It defines the test conditions and the initial data needed to trigger the notification flow during the test run.
-
-![Initial Triggering Record](Test_Chat_Bell_Notification_Initial_Triggering_Record.png)
-
-This screenshot shows the initial triggering record used in the test. It contains the notification data that should trigger the chat bell alert.
-
-![Set Assertions](Test_Chat_Bell_Notification_Set_Assertions.png)
-
-This screenshot shows the test assertions. It verifies that the flow correctly identified the notification type and assigned the recipient before sending the alert.
-
-![Set Test Details Trigger Path](Test_Chat_Bell_Notification_Set_Test_Details_Trigger_Path.png)
-
-This screenshot shows the test execution details and trigger path. It displays the step-by-step progress of the test as the flow processes the triggering record and sends the chat bell notification.
-
-![Test Results](Test_Chat_Bell_Notification_Results.png)
-
-This screenshot shows the final test results. The test confirms that the Get Notifications Developers Flow correctly sends chat bell notifications to the appropriate recipient.
-
 ### 2. Get Notifications Developers Flow
 
 - Trigger: event-driven or record-created entry when notification settings are ready
@@ -518,6 +494,30 @@ This action sends the first chat bell alert notification once the recipient and 
 ![Get Notifications Developers Action Two](Flows_Get_Notifications_Developers_Action_Two.png)
 
 This action completes the notification flow by sending the second chat bell alert, demonstrating the final delivery step of the alert automation.
+
+#### Test case: Chat Bell Notification
+
+I created a test case to verify the Get Notifications Developers Flow works correctly. The test confirms that chat bell notifications are sent to the appropriate recipient.
+
+![Test Setup](Test_Chat_Bell_Notification_Test_Setup.png)
+
+This screenshot shows the test setup configuration. It defines the test conditions and the initial data needed to trigger the notification flow during the test run.
+
+![Initial Triggering Record](Test_Chat_Bell_Notification_Initial_Triggering_Record.png)
+
+This screenshot shows the initial triggering record used in the test. It contains the notification data that should trigger the chat bell alert.
+
+![Set Assertions](Test_Chat_Bell_Notification_Set_Assertions.png)
+
+This screenshot shows the test assertions. It verifies that the flow correctly identified the notification type and assigned the recipient before sending the alert.
+
+![Set Test Details Trigger Path](Test_Chat_Bell_Notification_Set_Test_Details_Trigger_Path.png)
+
+This screenshot shows the test execution details and trigger path. It displays the step-by-step progress of the test as the flow processes the triggering record and sends the chat bell notification.
+
+![Test Results](Test_Chat_Bell_Notification_Results.png)
+
+This screenshot shows the final test results. The test confirms that the Get Notifications Developers Flow correctly sends chat bell notifications to the appropriate recipient.
 
 ### 3. Beatmap - Qualify Map Flow
 
