@@ -140,7 +140,10 @@ For osu!standard beatmaps, the create page uses the standard layout and keeps th
 
 For osu!mania beatmaps, the layout is different because mania maps require additional fields that are not relevant to standard maps. In particular, the Key Count field is available here and should be set to the appropriate value, such as 1K to 8K, depending on the map.
 
+![Beatmap Record Types Default and Mania Layout](Beatmap_Record_Types_Default_And_Mania_Layout.png)
+
 This distinction matters because the app is modeling different gameplay modes, and each mode has different field requirements. A standard beatmap should not carry mania-specific values, while a mania beatmap should not be created without the extra key information that makes the map meaningful in that mode.
+
 
 ### Score submissions screen
 
