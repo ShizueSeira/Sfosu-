@@ -28,8 +28,8 @@ This project was built with the help of AI coding assistants. Here is my experie
 - **Gemini 3.x:** The free monthly credit limit was hit fast — within an hour.
 - **Gemini 2.x:** After just one change, it already reached the limit.
 - **Claude:** It immediately required a billing subscription. I could not use it at all without subscribing.
-- **NVIDIA/Nemotron-3-Ultra (free):** It was extremely slow, so I switched models quickly.
-- **Current model:** I am now using **Poolside: Laguna S 2.1 (Free)** and hoping things go well here.
+- **NVIDIA/Nemotron-3-Ultra (free, via OpenRouter):** It was extremely slow, so I switched models quickly.
+- **Current model:** I am now using **Poolside: Laguna S 2.1 (Free, via OpenRouter)** and hoping things go well here.
 
 ## Documentation
 
