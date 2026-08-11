@@ -230,6 +230,45 @@ This part of the app manager focuses on user identity and profile setup. It capt
 
 This screen covers the app details and branding layer, which is where the project starts to feel more complete. It reflects the step where the identity, branding, and key app metadata were defined alongside the functionality.
 
+## Custom objects and standard object model
+
+These objects define the app’s data structure and show how the custom models fit alongside the built-in account and contact objects that support the user and relationship layers of the platform.
+
+### Custom objects overview
+
+![Custom objects overview](Sfosu_Custom_Objects.png)
+
+This view shows the custom object model used in the app. It gives a clear picture of the additional domain-specific entities created to support the app beyond the standard built-in objects, helping to explain how the system is structured around its own content and relationship logic.
+
+The object set now clearly includes the key custom records for the app’s content model:
+
+- Artist: a custom object for artist identity and related metadata
+- Beatmap: a custom object for beatmap content, details, and game-related record structure
+- Score Submission: a custom object tracking submitted play results and performance data
+- Chat Message: a custom object representing communication and conversation records
+
+I also explored a few interesting field/data-type patterns in these screenshots. The most useful ones for this app are the relationship-focused types, such as lookup/reference-style fields that connect records to their broader context, along with text and metadata fields for names, descriptions, and entity details. These are the kinds of fields that make the custom objects feel more like a real domain model instead of just isolated tables.
+
+### Artist custom object
+
+The Artist custom object is one of the most important additions because it gives the app a dedicated place for creative identity data. This lets the project model the people or creators behind the content in a structured way, instead of treating them as simple strings or ad hoc labels.
+
+### Beatmap custom object
+
+The Beatmap custom object adds the content layer of the project. It represents the actual playable or browsable map information and gives the system a dedicated place to store the details that matter for discovery, comparison, and performance tracking.
+
+### Standard object: accounts
+
+![Standard object account clans](Sfosu_Standard_Object_Account_Clans.png)
+
+The Accounts standard object is one of the core platform entities. This structure shows how account information is organized and how related account-level data is connected to the broader app model, giving the system a clear personal identity layer.
+
+### Standard object: contacts
+
+![Standard object contact osu!PlayProfile](Sfosu_Standard_Object_Contact_osuPlayProfile.png)
+
+The Contacts standard object adds the social and relationship layer of the app. This model shows how contact identity and profile data are connected, making it easier to understand how users, people, and other externally relevant entities are represented in the interface.
+
 ## Current status
 
 This project is currently in a learning and experimentation phase.
