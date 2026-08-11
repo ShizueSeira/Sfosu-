@@ -360,6 +360,28 @@ This full flow diagram shows the end-to-end structure of the automation: a new c
 
 This screenshot shows the list of all automation flows created for the app. It confirms that the moderation flow is part of a broader set of process automations supporting the project.
 
+## SOQL used in the chat message logic
+
+Salesforce Object Query Language (SOQL) is the query language I used to pull chat records from the Chat Message object in Apex. In the chat controller, the app needs to retrieve recent conversation history so the LWC can display the message feed and keep the UI updated.
+
+The main query used in the chat message Apex logic is:
+
+```apex
+SELECT Id, Message__c, Sender_Name__c, CreatedDate
+FROM Chat_Message__c
+ORDER BY CreatedDate ASC
+LIMIT 50
+```
+
+This query does a few important things:
+
+- Selects the message text, sender name, and timestamp needed for the chat UI
+- Reads from the Chat_Message__c custom object
+- Orders the messages by CreatedDate in ascending order so the feed displays in a natural conversation sequence
+- Limits the result to 50 records to keep the response efficient and manageable
+
+This is useful because the chat room does not need to load every message ever sent; it only needs the most recent conversation history in a lightweight and readable format. I also used a similar pattern in the recent feed controller, but with a descending order and a smaller limit to show the newest messages in a compact summary view.
+
 ## VS Code setup
 
 The project was developed and validated in VS Code with an authorized Salesforce org connection.
