@@ -461,7 +461,28 @@ This action completes the notification flow by sending the second chat bell aler
 
 ![Beatmap Qualify Map Update Records](Flows_Beatmap_Qualify_Map_Update_records.png)
 
-This screenshot shows the Update Records element that sets the Beatmap status to Qualified. The flow is designed to be triggered from a button on the Beatmap record page, making it easy for users to qualify a map directly from the record.
+This screenshot shows the Update Records element that sets the Beatmap status to Qualified. The flow is designed to be triggered from a button on the Beatmap record page, making it easy to users to qualify a map directly from the record.
+
+### 4. Update Beatmap Status Flow
+
+- Trigger: screen flow launched from a button/action on a specific Beatmap record
+- Object: Beatmap__c
+- Entry conditions: none (launched manually via action/button)
+- Flow type: Screen Flow
+- Behavior: presents a screen to select or confirm the new status, then updates the Beatmap record's Status field
+- Result: the beatmap status is updated to the selected value when the action is invoked
+
+![Update Beatmap Status Screen](Flows_Update_Beatmap_Status_Screen.png)
+
+This screenshot shows the screen element of the flow where the user selects the new status for the beatmap. It provides a simple interface for choosing the desired status value before the update is applied.
+
+![Update Beatmap Status Get Records](Flows_Update_Beatmap_Status_pcs_BeatmapStatis_resource.png)
+
+This screenshot shows the Get Records element that retrieves the current Beatmap record data. It ensures the flow has the latest record information before applying the status update.
+
+![Update Beatmap Status Update Records](Flows_Update_Beatmap_Status_Update_Records.png)
+
+This screenshot shows the Update Records element that applies the new status to the Beatmap record. This is the final step where the selected status value is written back to the record.
 
 ## SOQL used in the chat message logic
 
