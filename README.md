@@ -342,13 +342,23 @@ I created four Salesforce flows in total for the SFosu! project.
 
 ![Chat Moderation Filter Configure Start](Flows_Chat_Moderation_Filter_Configure_Start.png)
 
+This configuration screen shows the flow start settings for the moderation automation. It confirms that the trigger is a newly created Chat Message record and that the flow is designed to run automatically as soon as a message is submitted.
+
 ![Chat Moderation Filter Decision](Flows_Chat_Moderation_Filter_Decision.png)
+
+This decision element is the heart of the moderation logic. It checks whether the incoming message contains a banned or inappropriate word before deciding whether the content should be blocked or left alone.
 
 ![Chat Moderation Filter Update Records](Flows_Chat_Moderation_Filter_Update_Records.png)
 
+This update step is where the actual action happens. If the decision detects prohibited content, the flow updates the message and replaces the text with *Censored* so the chat stays safe and consistent.
+
 ![Chat Moderation Filter Flow Diagram](Flows_Chat_Moderation_Filter_FIgure.png)
 
+This full flow diagram shows the end-to-end structure of the automation: a new chat record enters the flow, the decision checks the content, and the record is updated only when a forbidden word is found.
+
 ![Flow list](Flows_List.png)
+
+This screenshot shows the list of all automation flows created for the app. It confirms that the moderation flow is part of a broader set of process automations supporting the project.
 
 ## VS Code setup
 
@@ -356,11 +366,19 @@ The project was developed and validated in VS Code with an authorized Salesforce
 
 ![VS Code environment](VSCode_Environment.png)
 
+This screenshot shows the coding environment used to build the app. It captures the workspace where the project files were created, edited, and managed as the Salesforce development work progressed.
+
 ![Authorized org in VS Code](VSCode_Authorized_Org.png)
+
+This image confirms that the Salesforce org is successfully connected to VS Code. It is an important setup step because it allows Apex classes, metadata, and Lightning Web Components to be synced and managed directly from the editor.
 
 ![Apex classes in VS Code](VSCode_Apex_Classes.png)
 
+This screenshot highlights the Apex logic within the project. It shows the backend classes used to process chat actions and related logic, making the server-side behavior easy to inspect and maintain in the IDE.
+
 ![LWC files in VS Code](VSCode_LWC.png)
+
+This final screenshot shows the Lightning Web Components used in the app. It demonstrates the front-end UI pieces that connect to the Apex logic and give the project its interactive chat and user-facing experience.
 
 ## How I built it from scratch
 
