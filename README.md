@@ -224,6 +224,24 @@ The filters for the Mania PP report refine the view by adjusting the relevant cr
 
 The Chatter screen is the tab for direct social interaction in the app. It gives the first impression that the platform is not just content-based but also community-driven, encouraging conversation and personal connection.
 
+### Chat messages screen
+
+![SFosu! chat messages screen](Sfosu_Chat_Messages_Screen.png)
+
+The Chat Messages screen is where the app feels more alive and immediate. This tab shows the value of ongoing communication, making the first impression one of responsiveness, conversation, and direct interaction.
+
+#### Chat messages related tab
+
+![SFosu! chat messages related tab](Sfosu_Chat_Message_Related_Tab.png)
+
+The Related tab for Chat Messages expands the conversation context by surfacing connected content and relevant follow-ups. It helps the user continue exploring the discussion beyond the immediate message.
+
+#### Chat messages details tab
+
+![SFosu! chat messages details tab](Sfosu_Chat_Message_Details_Tab.png)
+
+The Details tab focuses on the specific conversation content, making it the place where the user can inspect the full message context and the most important information tied to that exchange.
+
 ## Flows created
 
 I created four Salesforce flows in total for the SFosu! project.
@@ -258,24 +276,6 @@ The project was developed and validated in VS Code with an authorized Salesforce
 ![Apex classes in VS Code](VSCode_Apex_Classes.png)
 
 ![LWC files in VS Code](VSCode_LWC.png)
-
-### Chat messages screen
-
-![SFosu! chat messages screen](Sfosu_Chat_Messages_Screen.png)
-
-The Chat Messages screen is where the app feels more alive and immediate. This tab shows the value of ongoing communication, making the first impression one of responsiveness, conversation, and direct interaction.
-
-#### Chat messages related tab
-
-![SFosu! chat messages related tab](Sfosu_Chat_Message_Related_Tab.png)
-
-The Related tab for Chat Messages expands the conversation context by surfacing connected content and relevant follow-ups. It helps the user continue exploring the discussion beyond the immediate message.
-
-#### Chat messages details tab
-
-![SFosu! chat messages details tab](Sfosu_Chat_Message_Details_Tab.png)
-
-The Details tab focuses on the specific conversation content, making it the place where the user can inspect the full message context and the most important information tied to that exchange.
 
 ## How I built it from scratch
 
