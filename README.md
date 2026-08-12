@@ -387,6 +387,10 @@ This is likely the kind of field that should be constrained with validation and 
 
 The available fields during beatmap creation therefore need to reflect that difference. The osu!standard layout should not include Key Count, while the osu!mania layout should expose it as an available field because the key count is central to defining how the map is played in that mode.
 
+![Beatmap key count field visibility](Beatmap_Key_Count_Field_Visibility.png)
+
+The Key Count field visibility is controlled so that it only becomes visible when the mapper's primary mode is osu! mania. In other words, the field is conditionally shown based on whether the contact (the osu player) is a mania player. This means a standard player should never see the Key Count field at all, while a mania player will see it on mania beatmap records. I just made the mapper due to early configurations I haven't made yet, so this visibility rule is still being set up and refined as the permission model and contact profile fields are finalized.
+
 ![Beatmap play time formula](Beatmap_Play_Time_Formula.png)
 
 The Play Time formula is a display formula for the beatmap duration. It takes the raw duration in seconds and formats it into a readable mm:ss value, where mm represents the number of minutes and ss represents the remaining seconds. This makes the data easier to read in the UI without exposing the raw numeric duration as the primary display value.
