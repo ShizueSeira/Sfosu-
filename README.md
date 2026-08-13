@@ -8,11 +8,11 @@ This repository is my personal project space where I share my progress, mistakes
 
 ## Walkthrough Videos
 
-- [x] **Part 1**  
-  [![Part 1 Walkthrough](https://img.youtube.com/vi/0zXG_TP_Z1M/maxresdefault.jpg)](https://youtu.be/0zXG_TP_Z1M)  
-  *▶ [Watch Part 1 on YouTube](https://youtu.be/0zXG_TP_Z1M)*
+### Part 1: SFosu! App Walkthrough & Overview
+[![Part 1 Video Thumbnail](https://img.youtube.com/vi/0zXG_TP_Z1M/hqdefault.jpg)](https://youtu.be/0zXG_TP_Z1M)
 
-- [ ] **Part 2** *(Coming Soon)*
+### Part 2: Technical Deep Dive & Code Setup
+*(Coming Soon)*
 
 ## Table of Contents
 
