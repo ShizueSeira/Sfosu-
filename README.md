@@ -11,6 +11,8 @@ This repository is my personal project space where I share my progress, mistakes
 ### Part 1: SFosu! App Walkthrough & Overview
 [![Part 1 Video Thumbnail](https://img.youtube.com/vi/0zXG_TP_Z1M/hqdefault.jpg)](https://youtu.be/0zXG_TP_Z1M)
 
+*(Note: Watch [Part 1 on YouTube](https://youtu.be/0zXG_TP_Z1M) if the thumbnail preview doesn't load)*
+
 ### Part 2: Technical Deep Dive & Code Setup
 *(Coming Soon)*
 
