@@ -8,7 +8,7 @@ This repository is my personal project space where I share my progress, mistakes
 
 ## Walkthrough Videos
 
-### Part 1: SFosu! App Walkthrough & Overview
+### Part 1 (53 mins.)
 [![Part 1 Video Thumbnail](https://img.youtube.com/vi/0zXG_TP_Z1M/hqdefault.jpg)](https://youtu.be/0zXG_TP_Z1M)
 
 *(Note: Watch [Part 1 on YouTube](https://youtu.be/0zXG_TP_Z1M) if the thumbnail preview doesn't load)*
