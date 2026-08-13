@@ -6,10 +6,19 @@ A self-project app built for learning, experimenting, and documenting the proces
 
 This repository is my personal project space where I share my progress, mistakes, lessons, and small wins while building SFosu!. I am not claiming perfection here — I expect bugs, rough edges, and features that may not work exactly as intended. The goal is to learn, improve, and document what is happening along the way.
 
+## Walkthrough Videos
+
+- [x] **Part 1**  
+  [![Part 1 Walkthrough](https://img.youtube.com/vi/0zXG_TP_Z1M/maxresdefault.jpg)](https://youtu.be/0zXG_TP_Z1M)  
+  *▶ [Watch Part 1 on YouTube](https://youtu.be/0zXG_TP_Z1M)*
+
+- [ ] **Part 2** *(Coming Soon)*
+
 ## Table of Contents
 
 - [Why I built this](#why-i-built-this)
 - [Project vision](#project-vision)
+- [Walkthrough Videos](#walkthrough-videos)
 - [AI model experience](#ai-model-experience)
 - [Documentation](#documentation)
 - [Implemented code](#implemented-code)
